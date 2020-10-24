@@ -11,3 +11,10 @@ for (;pokemonList[i];) {
   text = text + " " + pokemonList[i].name; i++;
 }
 document.write(text);
+
+if (pokemonList.height > 1.5) {
+  document.write(" - Wow, that's a big pokemon!")
+}
+  else {
+    document.write();
+  }
