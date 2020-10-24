@@ -12,9 +12,10 @@ for (;pokemonList[i];) {
 }
 document.write(text);
 
-if (pokemonList.height > 1.5) {
-  document.write(" - Wow, that's a big pokemon!")
-}
-  else {
+for (let i = 0; i < pokemonList.length; i++){
+  if (pokemonList[i].height > 1.5){
+    document.write(" - Wow, that's a big pokemon!");
+  } else if (pokemonList[i].height <= 1.5){
     document.write();
   }
+}
