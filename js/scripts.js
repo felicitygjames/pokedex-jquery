@@ -20,9 +20,30 @@ let pokemonRepository = (function () {
   function getAll() {
     return pokemonList;
   }
+  function addListItem(pokemon) {
+    let ul = document.querySelector(".pokemon-list");
+    // let ul = document.createElement("ul");
+    // ul.classList.add("pokemon-list");
+    let li = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    li.appendChild(button);
+    ul.appendChild(li);
+    // document.body.appendChild(ul);
+
+    button.addEventListener("click", function(){
+      showDetails(pokemon);
+    })
+  }
+function showDetails (pokemon){
+  console.log(pokemon);
+}
+
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   };
 })();
 console.log(pokemonRepository.getAll());
@@ -35,13 +56,8 @@ pokemonRepository.add({
 console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-  let pokemonList = document.querySelector(".pokemon-list");
-  let listPokemon = document.createElement("li");
-  let button = document.createElement("button");
-  button.innerText = pokemon.name;
-  button.classList.add("button-class");
-  listPokemon.appendChild(button);
-  pokemonList.appendChild(listPokemon);
+  pokemonRepository.addListItem(pokemon);
+
   // let color = "";
   // if (pokemon.types.includes("grass")) {
   //   color = '<span style="color:green;">';
@@ -54,7 +70,6 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   // } else if (pokemon.types.includes("electric")) {
   //   color = '<span style="color:yellow;">';
   // }
-  
   // let size = "";
   // if (pokemon.height > 1) {
   //   size = "It's a big pokemon!";
