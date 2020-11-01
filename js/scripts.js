@@ -40,8 +40,8 @@ pokemonRepository.getAll().forEach(function (pokemon) {
   let button = document.createElement("button");
   button.innerText = "placeholder";
   button.classList.add("button-class");
-  unorderedList.appendChild(button);
-  container.appendChild(button);
+  listPokemon.appendChild(button);
+  pokemonList.appendChild(listPokemon);
   // let color = "";
   // if (pokemon.types.includes("grass")) {
   //   color = '<span style="color:green;">';
