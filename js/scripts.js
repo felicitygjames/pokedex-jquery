@@ -33,12 +33,15 @@ pokemonRepository.add({
 });
 
 console.log(pokemonRepository.getAll());
+
 pokemonRepository.getAll().forEach(function (pokemon) {
-  let unorderedList = document.querySelector("ul");
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = "pokemonList.name";
-  button.classList.add('my-class-name');
+  let pokemonList = document.querySelector(".pokemon-list");
+  let listPokemon = document.createElement("li");
+  let button = document.createElement("button");
+  button.innerText = "placeholder";
+  button.classList.add("button-class");
+  unorderedList.appendChild(button);
+  container.appendChild(button);
   // let color = "";
   // if (pokemon.types.includes("grass")) {
   //   color = '<span style="color:green;">';
