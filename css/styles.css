@@ -4,3 +4,8 @@
     border: 5px solid grey;
     margin: 10;
 }
+
+.my-class-list{
+    color: lightblue;
+    border-color: red;
+}

@@ -34,38 +34,43 @@ pokemonRepository.add({
 
 console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function (pokemon) {
-  let color = "";
-  if (pokemon.types.includes("grass")) {
-    color = '<span style="color:green;">';
-  } else if (pokemon.types.includes("flying")) {
-    color = '<span style="color:lightblue;">';
-  } else if (pokemon.types.includes("water")) {
-    color = '<span style="color:blue;">';
-  } else if (pokemon.types.includes("fire")) {
-    color = '<span style="color:red;">';
-  } else if (pokemon.types.includes("electric")) {
-    color = '<span style="color:yellow;">';
-  }
+  let unorderedList = document.querySelector("ul");
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = "pokemonList.name";
+  button.classList.add('my-class-name');
+  // let color = "";
+  // if (pokemon.types.includes("grass")) {
+  //   color = '<span style="color:green;">';
+  // } else if (pokemon.types.includes("flying")) {
+  //   color = '<span style="color:lightblue;">';
+  // } else if (pokemon.types.includes("water")) {
+  //   color = '<span style="color:blue;">';
+  // } else if (pokemon.types.includes("fire")) {
+  //   color = '<span style="color:red;">';
+  // } else if (pokemon.types.includes("electric")) {
+  //   color = '<span style="color:yellow;">';
+  // }
   
-  let size = "";
-  if (pokemon.height > 1) {
-    size = "It's a big pokemon!";
-  } else if (pokemon.height < 0.7) {
-    size = "It's a small pokemon!";
-  } else {
-    size = "It's an average pokemon";
-  }
-  document.write(
-    '<div class = "box">' +
-      pokemon.name +
-      " (height: " +
-      pokemon.height +
-      ") " +
-      size +
-      color +
-      "<br>" +
-      pokemon.types +
-      "<br>" +
-      "</div>"
-  );
+  // let size = "";
+  // if (pokemon.height > 1) {
+  //   size = "It's a big pokemon!";
+  // } else if (pokemon.height < 0.7) {
+  //   size = "It's a small pokemon!";
+  // } else {
+  //   size = "It's an average pokemon";
+  // }
+  // document.write(
+  //   '<div class = "box">' +
+  //     pokemon.name +
+  //     " (height: " +
+  //     pokemon.height +
+  //     ") " +
+  //     size +
+  //     color +
+  //     "<br>" +
+  //     pokemon.types +
+  //     "<br>" +
+  //     "</div>"
+  // );
 });
