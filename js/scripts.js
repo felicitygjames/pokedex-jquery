@@ -120,6 +120,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
+let modalContainer = document.querySelector('#modal-container');
 
   window.addEventListener('keydown', (e) => {
     let modalContainer = document.querySelector('#modal-container');
