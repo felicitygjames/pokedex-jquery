@@ -109,12 +109,12 @@ let pokemonRepository = (function () {
   }
 let modalContainer = $('#modal-container');
 
-  window.on('keydown', (e) => {
-    let modalContainer = $('#modal-container');
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-      hideModal();  
-    }
-  });
+  // window.on('keydown', (e) => {
+  //   let modalContainer = $('#modal-container');
+  //   if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+  //     hideModal();  
+  //   }
+  // });
 
   modalContainer.on("click", (e) => {
     let modalContainer = $('#modal-container');
