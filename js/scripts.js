@@ -41,7 +41,7 @@ let pokemonRepository = (function () {
     let closeButton = $('<button class = "modal-close">Close</button>');
     closeButton.on("click", hideModal);
     let name = $('<h1>' + pokemon.name + '</h1>');
-    let image = $('<img class = "modal.img">');
+    let image = $('<img class = "modal-img">');
     image.attr("src", pokemon.imageUrl);
     let imageAnimated = $('<img class = "modal-img-animated">');
     imageAnimated.attr("src", pokemon.imageUrlAnimated);
@@ -107,17 +107,17 @@ let pokemonRepository = (function () {
         console.error(e);
       });
   }
-let modalContainer = document.querySelector('#modal-container');
+let modalContainer = $('#modal-container');
 
-  window.addEventListener('keydown', (e) => {
-    let modalContainer = document.querySelector('#modal-container');
+  window.on('keydown', (e) => {
+    let modalContainer = $('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();  
     }
   });
 
-  modalContainer.addEventListener("click", (e) => {
-    let modalContainer = document.querySelector('#modal-container');
+  modalContainer.on("click", (e) => {
+    let modalContainer = $('#modal-container');
     let target = e.target;
     if (target === modalContainer) {
       hideModal();
