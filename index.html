@@ -12,25 +12,28 @@
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
     <body>
-        <nav>
-            <img src="img/pokedex-icon.png" height="50" width="50" alt="pokédex logo">
-            <a href="index.html">Pokédex</a>
-            <button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
+            <img src="img/pokedex-icon.png" height="50" width="50" alt="pokédex
+                logo">
+            <a href="index.html" class="navbar-brand">Pokédex</a>
+            <button type="button"  class="navbar-toggler" data-toggle="collapse">
 
             </button>
             <div>
-                <ul>
+                <ul class="list-unstyled">
                     <li>
-                    <a href="index.html">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
-                    <a href="about.html">About</a>
+                        <a href="about.html">About</a>
                     </li>
                 </ul>
             </div>
         </nav>
-        <ul class="pokemon-list">
-        </ul>
+        <div class="page-container">
+            <ul class="pokemon-list list-unstyled">
+            </ul>
+        </div>
         <button id='show-modal'>Show modal</button>
         <div id="modal-container"></div>
         <script src="js/promise-polyfill.js"></script>
