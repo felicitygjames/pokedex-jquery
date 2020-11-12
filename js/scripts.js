@@ -36,7 +36,7 @@ let pokemonRepository = (function () {
       let card = $(
         '<div class="card mt-5" style="width: 18rem; margin:13px;"></div>'
       );
-      let image = $('<img class="card-img-top mx-auto" style="width: 35%;" alt="...">');
+      let image = $('<img class="card-img mx-auto" style="width: 35%;" alt="...">');
       let title = $('<h5 class="card-title">' + pokemon.name + "</h5>");
       image.attr("src", pokemon.imageUrl);
       let body = $('<div class="card-body" style="text-align: center;"></div>');

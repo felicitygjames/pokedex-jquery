@@ -12,27 +12,35 @@
         <link rel="stylesheet" href="css/styles.css" type="text/css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top">
-            <img src="img/pokedex-icon.png" height="50" width="50" alt="pokédex
-                logo">
-            <a href="index.html" class="navbar-brand">Pokédex</a>
-            <button type="button"  class="navbar-toggler" data-toggle="collapse">
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/pokedex-icon.png" width="45"
+                    height="45" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="index.html">Home</a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li>
-                        <a href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="myInput" onkeyup="search()" class="form-control
+                        mr-sm-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                </form>
             </div>
         </nav>
-        <p class="page-container">
-            This is a simple pokédex application I made during my Career Foundry web development course. Enjoy!
-        </p>
+        <p>This is a simple pokédex application I made during my Career Foundry web development course. Enjoy!</p>
         <script src="js/promise-polyfill.js"></script>
         <script src="js/fetch-polyfill.js"></script>
         <script
