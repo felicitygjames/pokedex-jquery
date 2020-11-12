@@ -18,8 +18,10 @@ let pokemonRepository = (function () {
   }
   function addListItem(pokemon) {
     let ul = $(".pokemon-list");
-    let li = $('<li></li>');
-    let button = $('<button class = "button-class">' + pokemon.name + '</button>')
+    let li = $("<li></li>");
+    let button = $(
+      '<button class = "button-class">' + pokemon.name + "</button>"
+    );
     li.append(button);
     ul.append(li);
     button.on("click", function (event) {
@@ -30,24 +32,24 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
       console.log(pokemon);
-      showModal(pokemon)
+      showModal(pokemon);
     });
   }
 
-  function showModal (pokemon) {
+  function showModal(pokemon) {
     let modalContainer = $("#modal-container");
     modalContainer.empty();
     let modal = $('<div class = "modal"></div>');
     let closeButton = $('<button class = "modal-close">Close</button>');
     closeButton.on("click", hideModal);
-    let name = $('<h1>' + pokemon.name + '</h1>');
+    let name = $("<h1>" + pokemon.name + "</h1>");
     let image = $('<img class = "modal-img">');
     image.attr("src", pokemon.imageUrl);
     let imageAnimated = $('<img class = "modal-img-animated">');
     imageAnimated.attr("src", pokemon.imageUrlAnimated);
-    let height = $('<h3>' + "height: " + pokemon.height + '</h3>');
-    let types = $('<h3>' + "types: " + pokemon.types + '</h3>');
-    let abilities = $('<h3>' + "abilities: " + pokemon.abilities + '</h3>');
+    let height = $("<h3>" + "height: " + pokemon.height + "</h3>");
+    let types = $("<h3>" + "types: " + pokemon.types + "</h3>");
+    let abilities = $("<h3>" + "abilities: " + pokemon.abilities + "</h3>");
     modal.append(name);
     modal.append(image);
     modal.append(imageAnimated);
@@ -59,7 +61,7 @@ let pokemonRepository = (function () {
     modalContainer.addClass("is-visible");
   }
 
-  function hideModal () {
+  function hideModal() {
     let modalContainer = $("#modal-container");
     modalContainer.removeClass("is-visible");
   }
@@ -92,39 +94,38 @@ let pokemonRepository = (function () {
       })
       .then(function (details) {
         item.imageUrl = details.sprites.other.dream_world.front_default;
-        item.imageUrlAnimated = details.sprites.versions['generation-v']['black-white'].animated.front_default;
+        item.imageUrlAnimated =
+          details.sprites.versions["generation-v"][
+            "black-white"
+          ].animated.front_default;
         item.height = details.height;
         item.types = [];
-        details.types.forEach(function(itemType) {
-          item.types.push(itemType.type.name)
-        })
+        details.types.forEach(function (itemType) {
+          item.types.push(itemType.type.name);
+        });
         item.abilities = [];
-        details.abilities.forEach(function(itemAbility) {
+        details.abilities.forEach(function (itemAbility) {
           item.abilities.push(itemAbility.ability.name);
-        })
+        });
       })
       .catch(function (e) {
         console.error(e);
       });
   }
-let modalContainer = $('#modal-container');
+  let modalContainer = $('#modal-container');
 
-  // window.on('keydown', (e) => {
-  //   let modalContainer = $('#modal-container');
-  //   if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-  //     hideModal();  
-  //   }
-  // });
-
-  modalContainer.on("click", (e) => {
+  $(window).on('keydown', (e) => {
     let modalContainer = $('#modal-container');
-    let target = e.target;
-    if (target === modalContainer) {
+    if (e.key === 'Escape' && modalContainer.hasClass('is-visible')) {
       hideModal();
     }
   });
 
-  
+  modalContainer.on("click", (e) => {
+    if (modalContainer.hasClass('is-visible')) {
+      hideModal();
+    }
+  });
 
   return {
     getAll: getAll,
@@ -133,7 +134,7 @@ let modalContainer = $('#modal-container');
     loadList: loadList,
     loadDetails: loadDetails,
     showDetails: showDetails,
-    showModal: showModal
+    showModal: showModal,
   };
 })();
 
