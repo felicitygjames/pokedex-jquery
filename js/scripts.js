@@ -36,7 +36,9 @@ let pokemonRepository = (function () {
       let card = $(
         '<div class="card mt-5" style="width: 18rem; margin:13px;"></div>'
       );
-      let image = $('<img class="card-img mx-auto pokemon-top-margin" style="width: 35%" alt="...">');
+      let image = $(
+        '<img class="card-img mx-auto pokemon-top-margin" style="width: 35%" alt="...">'
+      );
       let title = $('<h5 class="card-title">' + pokemon.name + "</h5>");
       image.attr("src", pokemon.imageUrl);
       let body = $('<div class="card-body" style="text-align: center;"></div>');
@@ -128,8 +130,6 @@ let pokemonRepository = (function () {
       $(".modal-header").css("background-color", "rgb(156, 156, 99)");
     }
   }
-
-
 
   // function showModal(pokemon) {
   //   let modalContainer = $("#modal-container");
@@ -244,4 +244,4 @@ function search() {
       card[i].style.display = "none";
     }
   }
-} 
+}
